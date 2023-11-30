@@ -1,48 +1,111 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://cdn.liferp.gg/lrp-logomark-bw.png" type="image/x-icon">
-    <title>Form | LifeRP</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <title>LifeRP | Careers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media (max-width: 640px) {
+            .navbar {
+                display: none;
+            }
+            .hamburger {
+                display: initial;
+            }
+        }
+        @media (min-width: 641px) {
+            .hamburger {
+                display: none;
+            }
+            .mobile-menu {
+                display: none;
+            }
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #111827;
+            padding-top: 1rem;
+            z-index: 10;
+        }
+    </style>
 </head>
-<body>
-    <div class="header">
-        <div class="logotype-mark">
-            <a href="https://form.lrp.gg">
-                <img src="https://cdn.liferp.gg/lrp-logotype-mark-form.svg" alt="lrp-logomark-nobg-w">
-            </a>
+<body class="bg-gray-800 text-white font-sans">
+
+    <nav class="flex justify-between items-center p-4">
+        <a href="/" class="flex items-center">
+            <img src="https://cdn.liferp.gg/lrp-logotype-mark-form.svg" alt="LifeRP Logo" class="h-8">
+        </a>
+        <div class="navbar space-x-4">
+            <a href="/who-we-are" class="hover:text-gray-300 font-bold">Who we are 👽</a>
+            <a href="https://liferp.gg" class="hover:text-gray-300 font-bold">Website 🌐</a>
+            <a href="/contact" class="hover:text-gray-300 font-bold">Contact us 📞</a>
+        </div>
+        <div class="hamburger">
+            <button id="hamburgerBtn" class="text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu bg-gray-800 p-4" id="mobileMenu">
+        <button id="closeBtn" class="text-white focus:outline-none float-right">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="/" class="flex items-center">
+            <img src="https://cdn.liferp.gg/lrp-logotype-mark-form.svg" alt="LifeRP Logo" class="h-8">
+        </a>
+        <div class="mt-8">
+            <a href="/who-we-are" class="block hover:text-gray-300 mb-2 font-bold">Who we are 👽</a>
+            <a href="https://liferp.gg" class="block hover:text-gray-300 mb-2 font-bold">Website 🌐</a>
+            <a href="/contact" class="block hover:text-gray-300 font-bold">Contact us 📞</a>
         </div>
     </div>
-    <div class="container">
-        <div class="card-admin">
-            <div class="body-admin">
-                <div class="title-admin">
-                    <p class="job-title">Administrateur</p>
-                    <img src="https://cdn.liferp.gg/top-icon-admin.svg" class="top-icon-admin" alt="top-icon-admin">
-                </div>
-                <p class="job-body">Vous avez envie de prendre part au projet de RolePlay le plus ambitieux ? <br><br>Vous avez des qualités en tant que manager d’équipe ? <br><br>Vous connaissez le fonctionnement d’un serveur de jeu sur FiveM ? <br><br><span class="job-body-bold">Et bien n’attendez plus, et rejoignez notre équipe en cliquant ci-dessous !</span></p>  
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Administrator Card -->
+            <div class="bg-gray-700 p-4 rounded-lg flex flex-col justify-between">
+                <h2 class="text-red-600 font-bold">Administrator ⚙️</h2>
+                <p>You want to be part of our team and participate in the biggest project FiveM has ever seen? You feel like you have the capacity to help us build a better server? Well, wait no more and join us in this wonderful adventure, by clicking the button below.</p>
+                <a href="/administrator" class="bg-red-600 text-white py-2 px-4 rounded mt-4 text-center font-bold">Apply 📥</a>
             </div>
-            <div class="cta-button-admin">
-                <div class="cta-button-bg-admin">
-                    <div class="button-container-admin">
-                        <div class="content-button-admin">
-                            <div class="button-icon">
-                                <div class="icon-bg"></div>
-                                <div class="play-icon">
-                                    <img src="https://cdn.liferp.gg/lrp-play-icon.svg" class="play" alt="lrp-play-icon">
-                                </div>
-                            </div>
-                            <div class="button-label">
-                                <p class="main-label">Postuler</p>
-                                <p class="sub-label">Pour ce poste</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+            <!-- Developer Card -->
+            <div class="bg-gray-700 p-4 rounded-lg flex flex-col justify-between">
+                <h2 class="text-indigo-500 font-bold">Developer 💻</h2>
+                <p>You want to be part of our team and participate in the biggest project FiveM has ever seen? You have been coding in your cave for a long time? Well, wait no more and join us in this wonderful adventure, by clicking the button below.</p>
+                <a href="/developer" class="bg-indigo-500 text-white py-2 px-4 rounded mt-4 text-center font-bold">Apply 📥</a>
+            </div>
+            <!-- Moderator Card -->
+            <div class="bg-gray-700 p-4 rounded-lg flex flex-col justify-between">
+                <h2 class="text-green-500 font-bold">Moderator ⛑️</h2>
+                <p>You want to be part of our team and participate in the biggest project FiveM has ever seen? You want to help us keep our players safe and immersed? Well, wait no more and join us in this wonderful adventure, by clicking the button below.</p>
+                <a href="/moderator" class="bg-green-500 text-white py-2 px-4 rounded mt-4 text-center font-bold">Apply 📥</a>
             </div>
         </div>
     </div>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('closeBtn');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+        });
+    </script>
+
 </body>
 </html>
